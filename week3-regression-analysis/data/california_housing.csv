@@ -1,0 +1,20 @@
+import pandas as pd
+from sklearn.datasets import fetch_california_housing
+import os
+
+# 1. Fetch the dataset from the library
+housing = fetch_california_housing()
+
+# 2. Convert it into a structured table (DataFrame)
+df = pd.DataFrame(housing.data, columns=housing.feature_names)
+
+# 3. Add the target (Price) to the table
+df['MedHouseVal'] = housing.target
+
+# 4. Create the data directory if it doesn't exist
+os.makedirs('../data', exist_ok=True)
+
+# 5. Save the data as a CSV file in your week3 data folder
+df.to_csv('../data/california_housing.csv', index=False)
+
+print("Success! california_housing.csv has been saved in your data folder.")
