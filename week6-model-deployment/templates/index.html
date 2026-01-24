@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Grade Predictor</title>
+</head>
+<body style="text-align: center; font-family: Arial; padding-top: 50px;">
+    <h1>Grade Prediction App</h1>
+    <p>Enter your study hours to see your predicted score.</p>
+    <form action="/predict" method="post">
+        <input type="number" name="hours" step="0.1" placeholder="Enter hours (e.g. 5)" required>
+        <button type="submit">Predict Grade</button>
+    </form>
+
+    {% if prediction %}
+        <h2 style="color: blue;">Predicted Grade: {{ prediction }}%</h2>
+    {% endif %}
+</body>
+</html>
