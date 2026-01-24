@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<body style="text-align: center; font-family: Arial;">
+    <h1>Smart Study Performance Predictor</h1>
+    <form action="/predict" method="post">
+        <input type="number" name="hours" placeholder="Study Hours" step="0.1" required><br><br>
+        <input type="number" name="attendance" placeholder="Attendance %" required><br><br>
+        <input type="number" name="sleep" placeholder="Sleep Hours" required><br><br>
+        <input type="number" name="scores" placeholder="Previous Scores" required><br><br>
+        <button type="submit">Predict Performance</button>
+    </form>
+    
+    {% if grade %}
+        <h2>Results:</h2>
+        <p>Predicted Grade Point: <strong>{{ grade }}</strong></p>
+        <p>Status: <strong>{{ status }}</strong></p>
+    {% endif %}
+</body>
+</html>
